@@ -26,7 +26,10 @@ Service Broker provides a set of performance counters that provide information o
 
 - [Service Broker Related Dynamic Management Views (Transact-SQL)](../../relational-databases/system-dynamic-management-views/service-broker-related-dynamic-management-views-transact-sql.md)
 - [SQL Server, Broker Statistics object](../../relational-databases/performance-monitor/sql-server-broker-statistics-object.md)
-- [Broker Event Category](../../relational-databases/event-classes/broker-event-category.md)## Tuning a Service Broker Stored Procedure
+- [Broker Event Category](../../relational-databases/event-classes/broker-event-category.md)
+
+## Tuning a Service Broker Stored Procedure
+
 For the most part, tuning a stored procedure that uses Service Broker is no different from tuning any other stored procedure. However, there are a few additional considerations.
 
 First, use the WAITFOR clause. Messages seldom arrive at predictable intervals. Even in a service where messages arrive at roughly the same rate that the stored procedure processes the messages, there may be times when no messages are available. Therefore, the procedure should use a WAITFOR clause with a RECEIVE statement or with a GET CONVERSATION GROUP statement. Without WAITFOR, these statements return immediately when there are no available messages on the queue. Depending on the implementation of the stored procedure, the procedure may then loop back through the statement, consuming resources needlessly, or the procedure may exit only to be reactivated shortly thereafter, consuming more resources than simply continuing to run.
