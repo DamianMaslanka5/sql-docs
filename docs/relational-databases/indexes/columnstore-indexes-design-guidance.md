@@ -68,7 +68,7 @@ For more information, see [Columnstore indexes in data warehousing](columnstore-
 
 ## Use an ordered clustered columnstore index for large data warehouse tables
 
-For ordered columnstore index availability, see [Columnstore indexes: Overview](columnstore-indexes-overview.md)#ordered-columnstore-index-availability).
+For ordered columnstore index availability, see [Columnstore indexes: Overview](columnstore-indexes-overview.md#ordered-columnstore-index-availability).
 
 Consider using an ordered clustered columnstore index in the following scenarios:
 
